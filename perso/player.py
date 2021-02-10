@@ -15,7 +15,7 @@ class Player(perso.Perso):
         self._alive = True
         self._att_dmg = p_att_dmg
         self._armor = p_armor
-        self.special = {}
+        self._learnt_tech = []
 
     # Getter
     @property
@@ -123,3 +123,9 @@ class Player(perso.Perso):
         else:
             print("Vous avez déjà vos PV max")
             return False
+
+    def learn_special_attack(self):
+        if self._level > 1 and self._level % 2 == 0:
+            print("Bravo ! Vous pouvez apprendre une nouvelle technique parmis celle-ci :")
+        else:
+            return 

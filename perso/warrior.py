@@ -1,4 +1,5 @@
 from perso import player
+from technic import warrior_tech_container
 
 
 class Warrior(player.Player):
@@ -7,6 +8,9 @@ class Warrior(player.Player):
         player.Player.__init__(self, p_name, p_att_dmg, p_armor)
         self._energy = 100
         self._energy_max = 100
+
+        self._warrior_technique = warrior_tech_container.WarriorTechContainer("technic/warrior_technique.json").tech_list
+
 
     # Getters
     @property
@@ -31,3 +35,12 @@ class Warrior(player.Player):
         string = player.Player.__repr__(self)
         string += " Je suis un Guerrier."
         return string
+
+    def learn_special_attack(self):
+        player.Player.learn_special_attack(self)
+        for i, tech in enumerate(self._warrior_technique):
+            print("[{}]: {}".format(i, tech))
+
+        which_tech_learn = int(input("Que voulez vous apprendre comme technique? "))
+        if which_tech_learn < 0 or which_tech_learn >= len(self._warrior_technique):
+            print("Erreur")

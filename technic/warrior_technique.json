@@ -1,0 +1,10 @@
+{
+  "Coup divin": {
+    "description": "Fais tomber un point du ciel infligeant des dégats supplémentaires en fonction de votre attaque",
+    "cost": "20 points d'energies"
+  },
+  "Epee funeste": {
+    "description": "Votre épée devient empoisonée ce qui inflige des dégats sur la durée. Dure 2 attaques",
+    "cost": "30 points d'energies"
+  }
+}
